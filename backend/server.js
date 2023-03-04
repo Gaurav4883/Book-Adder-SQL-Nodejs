@@ -1,12 +1,15 @@
 const express = require("express")
 const app = express()
 const mysql = require("mysql")
-app.use(express.json())
+const dotenv = require("dotenv").config()
+const cors = require('cors')
 
+app.use(express.json())
+app.use(cors())
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Bank8848@12345678",
+    password: process.env.PASSWORD,
     database: "test"
 })
 con.connect(function (err) {
