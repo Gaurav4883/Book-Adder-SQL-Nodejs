@@ -19,6 +19,19 @@ const Home = () => {
         fetchAllBooks()
     }, [books])
 
+    const handleDelete = async (id) => {
+        try {
+            const res = await axios.delete(`http://localhost:5000/books/${id}`)
+            if (res.data.message === "Book deleted from database") {
+                // Filtering out the deleted book from the books state
+                setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
     return (
         <>
             <div className='gaurav' >
@@ -32,7 +45,7 @@ const Home = () => {
                         <h2>{book.title}</h2>
                         <p>{book.desc}</p>
                         <span>{book.price}</span>
-                        <button className="delete">Delete</button>
+                        <button className="delete" onClick={() => handleDelete(book.id)} >Delete</button>
                         <button className="update">Update</button>
                     </div>
                 ))}

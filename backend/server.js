@@ -39,6 +39,14 @@ app.post('/books', (req, res) => {
     });
 });
 
+app.delete('/books/:id', (req, res) => {
+    const bookId = req.params.id;
+    const q = "DELETE FROM books WHERE id= ?"
+    con.query(q, [bookId], (error, result) => {
+        if (error) return res.json(error)
+        else return res.json({ message: `Book with ID ${bookId} deleted from database`, rowsAffected: result.affectedRows })
+    })
+})
 
 app.listen(5000, () => {
     console.log("Listening on port 5000")
