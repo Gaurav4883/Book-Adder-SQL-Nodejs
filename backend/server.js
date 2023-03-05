@@ -26,11 +26,13 @@ app.get('/books', (req, res) => {
 })
 
 app.post('/books', (req, res) => {
-    const q = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?)";
+    const q = "INSERT INTO books (`title`, `desc`, `cover`,`price`) VALUES (?)";
     const values = [
         req.body.title,
         req.body.desc,
-        req.body.cover]
+        req.body.cover,
+        req.body.price
+    ]
     con.query(q, [values], (err, result) => {
         if (err) return res.json(err);
         return res.json({ message: "Book added to database", id: result.insertId });

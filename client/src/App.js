@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Add from './pages/Add';
 import Update from './pages/Update';
 import Error from './pages/Error';
+import './style.css'
 
 function App() {
   return (
