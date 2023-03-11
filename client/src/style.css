@@ -1,6 +1,5 @@
 .App {
-    height: 100vh;
-    padding: 0px 40px;
+    padding: 8px 40px;
     align-items: center;
     justify-content: center;
     background-color: rgb(195, 144, 144);
@@ -52,7 +51,10 @@ img {
 }
 
 .addbutton {
-    margin-left: 330px;
+    margin-top: -15px;
+    margin-left: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
@@ -65,3 +67,76 @@ img {
     text-decoration: none;
     color: white;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgb(195, 144, 144);
+}
+
+input,
+textarea {
+    padding: 15px;
+    margin: 15px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+    display: flex;
+}
+
+label {
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 80%;
+        height: 100%;
+    }
+
+    .App {
+        padding: 8px 40px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(195, 144, 144);
+    }
+
+
+    input,
+    textarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {}

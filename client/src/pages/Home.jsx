@@ -36,7 +36,7 @@ const Home = () => {
         <>
             <div className='gaurav' >
                 <h1>Gaurav's Book Shop</h1>
-                <button className='addbutton' > <Link className="link-without-underline" to="/add" > Add new book </Link> </button>
+                <button className='addbutton' > <Link className="link-without-underline" to="/add" > ➕  Add new book  </Link> </button>
             </div>
             <div className="books">
                 {books.map(book => (
@@ -46,7 +46,7 @@ const Home = () => {
                         <p>{book.desc}</p>
                         <span>{book.price}</span>
                         <button className="delete" onClick={() => handleDelete(book.id)} >Delete</button>
-                        <button className="update">Update</button>
+                        <Link to={`/books/${book.id}/update`}><button className="update">Update</button></Link>
                     </div>
                 ))}
             </div>

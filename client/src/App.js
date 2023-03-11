@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/add' element={<Add />} />
-          <Route exact path='/update' element={<Update />} />
+          <Route exact path='/books/:id/update' element={<Update />} />
           <Route exact path='/*' element={<Error />} />
         </Routes>
       </Gaurav>
