@@ -40,7 +40,7 @@ const Home = () => {
             </div>
             <div className="books">
                 {books.map(book => (
-                    <div className="book" key={book.id} >
+                    <div className="book" key={book.id}  >
                         {book.cover && <img src={book.cover} alt="bookimg" />}
                         <h2>{book.title}</h2>
                         <p>{book.desc}</p>
